@@ -1,3 +1,6 @@
-curl -o fastfetch.tar.gz https://github.com/fastfetch-cli/fastfetch/releases/download/2.64.2/fastfetch-linux-amd64.tar.gz
-echo "fastfetch downloaded, unzipping..."
-tar -xf fastfetch.tar.gz
+curl -L -0 https://github.com/fastfetch-cli/fastfetch/releases/download/2.64.2/fastfetch-linux-amd64.tar.gz
+
+echo "Extracting..."
+tar -xzf fastfetch-linux-amd64.tar.gz
+
+cp -f fastfetch-linux-amd64/usr/bin/fastfetch /usr/bin/
