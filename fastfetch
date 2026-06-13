@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Downloading fastfetch..."
-curl -Ls -o fastfetch.tar.gz https://github.com
+curl -Ls -o fastfetch.tar.gz https://github.com/fastfetch-cli/fastfetch/releases/download/2.64.2/fastfetch-linux-amd64.tar.gz
 
 if [ ! -s fastfetch.tar.gz ]; then
     echo "Error: Download failed (file is empty)"
@@ -9,7 +9,7 @@ if [ ! -s fastfetch.tar.gz ]; then
 fi
 
 echo "Unzipping..."
-tar -xzf fastfetch.tar.gz
+tar -xzf fastfetch-linux-amd64.tar.gz
 
 echo "Installing..."
 cp -f fastfetch-*/usr/bin/fastfetch /usr/bin/fastfetch
