@@ -1,6 +1,18 @@
-curl -L -0 https://github.com/fastfetch-cli/fastfetch/releases/download/2.64.2/fastfetch-linux-amd64.tar.gz
+#!/bin/bash
 
-echo "Extracting..."
-tar -xzf fastfetch-linux-amd64.tar.gz
+echo "Downloading fastfetch..."
+curl -Ls -o fastfetch.tar.gz https://github.com
 
-cp -f fastfetch-linux-amd64/usr/bin/fastfetch /usr/bin/
+if [ ! -s fastfetch.tar.gz ]; then
+    echo "Error: Download failed (file is empty)"
+    exit 1
+fi
+
+echo "Unzipping..."
+tar -xzf fastfetch.tar.gz
+
+echo "Installing..."
+cp -f fastfetch-*/usr/bin/fastfetch /usr/bin/fastfetch
+chmod +x /usr/bin/fastfetch
+
+echo "Done!"
